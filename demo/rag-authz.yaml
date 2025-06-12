@@ -17,5 +17,5 @@ spec:
   # Everything else is only allowed to access /GET
   - to:
     - operation:
-        methods: ["GET"]
-        paths: ["/"]
+        methods: ["POST"]
+        paths: ["/query"]
