@@ -1,0 +1,21 @@
+apiVersion: security.istio.io/v1
+kind: AuthorizationPolicy
+metadata:
+  name: rag-authz
+  namespace: default
+spec:
+  targetRefs:
+  - kind: Service
+    group: ""
+    name: rag
+  action: ALLOW
+  rules:
+  # only the default namespace can access it
+  # - from:
+  #  - source:
+  #      namespaces: ["default"]
+  # Everything else is only allowed to access /GET
+  - to:
+    - operation:
+        methods: ["GET"]
+        paths: ["/"]
