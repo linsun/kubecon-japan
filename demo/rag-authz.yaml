@@ -10,11 +10,6 @@ spec:
     name: rag
   action: ALLOW
   rules:
-  # only the default namespace can access it
-  # - from:
-  #  - source:
-  #      namespaces: ["default"]
-  # Everything else is only allowed to access /GET
   - to:
     - operation:
         methods: ["POST","GET"]
